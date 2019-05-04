@@ -13,6 +13,6 @@ These business queries can be answered using the StarNet diagram which can be fo
 
 1. [What pure breed has the fastest adoption speed?](./query-footprint/q1-query-footprint.png)
 2. [What pet color and maturity size combination have the slowest adoption speed?](./query-footprint/q2-query-footprint.png)
-3. [In Kuala Lumpur, which male dog mix breed has the fastest adoption speed?]()
-4. [How do pet adoption speeds change if the pet has been vaccinated, dewormed and sterillized?]()
-5. [Do pets having a mixed color and breed have a faster adoption speed?]()
+3. [In Kuala Lumpur, which male dog mix breed has the fastest adoption speed?](./query-footprint/q3-query-footprint.png)
+4. [How do pet adoption speeds change if the pet has been vaccinated, dewormed and sterillized?](./query-footprint/q4-query-footprint.png)
+5. [Do pets having a mixed color and breed have a faster adoption speed?](./query-footprint/q5-query-footprint.png)
