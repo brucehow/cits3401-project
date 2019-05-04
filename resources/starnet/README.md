@@ -9,7 +9,7 @@ The StarNet is created using our concept heirarchies defined in our plan. Each h
 <div align="center">
   <img src="starnet.png" alt="Divider" style="width: 70%"/>
 </div>
-
+<br>
 
 **Question 2:** StarNet Business Queries
 
