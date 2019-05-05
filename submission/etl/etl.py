@@ -42,6 +42,11 @@ def maturity_size_data(file, row):
     data = ["", maturity_size]
     file.writerow(data)
 
+def fur_length_data(file, row):
+    fur_length = row[10]
+    data = ["", fur_length]
+    file.writerow(data)
+
 def generic_data(file):
     file.writerow(["", "Yes"])
     file.writerow(["", "No"])
@@ -98,6 +103,7 @@ def main():
     write_pet_type.writerow(["TypeID", "Type"])
     write_age.writerow(["AgeID", "Age"])
     write_maturity_size.writerow(["MaturitySizeID", "MaturitySize"])
+    write_fur_length.writerow(["FurLengthID", "FurLength"])
     write_rescuer.writerow(["RescuerID", "Rescuer"])
     write_health.writerow(["HealthID", "Health"])
 
@@ -111,6 +117,7 @@ def main():
         pet_type_data(write_pet_type, row)
         age_data(write_age, row)
         maturity_size_data(write_maturity_size, row)
+        fur_length_data(write_fur_length, row)
         rescuer_data(write_rescuer, row)
 
     # Health
