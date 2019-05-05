@@ -17,6 +17,26 @@ def color_data(file, row):
     data = ["", color1, color2, color3]
     file.writerow(data)
 
+def location_data(file, row):
+    location = row[17]
+    data = ["", location]
+    file.writerow(data)
+
+def gender_data(file, row):
+    gender = row[5]
+    data = ["", gender]
+    file.writerow(data)
+
+def pet_type_data(file, row):
+    pet_type = row[0]
+    data = ["", pet_type]
+    file.writerow(data)
+
+def age_data(file, row):
+    age = row[2]
+    data = ["", age]
+    file.writerow(data)
+
 def generic_data(file):
     file.writerow(["", "Yes"])
     file.writerow(["", "No"])
@@ -36,7 +56,7 @@ def main():
     color = open("csv/DimColor.csv", "w")
     location = open("csv/DimLocation.csv", "w")
     gender = open("csv/DimGender.csv", "w")
-    type = open("csv/DimType.csv", "w")
+    pet_type = open("csv/DimType.csv", "w")
     age = open("csv/DimAge.csv", "w")
     maturity_size = open("csv/DimMaturitySize.csv", "w")
     fur_length = open("csv/DimFurLength.csv", "w")
@@ -53,7 +73,7 @@ def main():
     write_color = csv.writer(color)
     write_location = csv.writer(location)
     write_gender = csv.writer(gender)
-    write_type = csv.writer(type)
+    write_pet_type = csv.writer(pet_type)
     write_age = csv.writer(age)
     write_maturity_size = csv.writer(maturity_size)
     write_fur_length = csv.writer(fur_length)
@@ -68,6 +88,10 @@ def main():
     header = next(read_train)
     write_breed.writerow(["BreedID", "PrimaryBreed", "SecondaryBreed"])
     write_color.writerow(["ColorID", "PrimaryColor", "SecondaryColor", "TertiaryColor"])
+    write_location.writerow(["LocationID", "Location"])
+    write_gender.writerow(["GenderID", "Gender"])
+    write_pet_type.writerow(["TypeID", "Type"])
+    write_age.writerow(["AgeID", "Age"])
     write_rescuer.writerow(["RescuerID", "Rescuer"])
     write_health.writerow(["HealthID", "Health"])
 
@@ -76,6 +100,10 @@ def main():
     for row in read_train:
         breed_data(write_breed, row)
         color_data(write_color, row)
+        location_data(write_location, row)
+        gender_data(write_gender, row)
+        pet_type_data(write_pet_type, row)
+        age_data(write_age, row)
         rescuer_data(write_rescuer, row)
 
     # Health
