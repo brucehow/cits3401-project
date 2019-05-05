@@ -36,8 +36,7 @@ GO
 
 CREATE TABLE DimBreedLabels (
 	BreedLabelID INT PRIMARY KEY IDENTITY,
-	BreedName VARCHAR(100),
-	Type INT NOT NULL
+	BreedName VARCHAR(100)
 );
 GO
 
@@ -66,7 +65,6 @@ GO
 
 CREATE TABLE DimLocation (
 	LocationID INT PRIMARY KEY IDENTITY,
-	Country VARCHAR(100),
 	State INT
 );
 GO
@@ -113,7 +111,7 @@ GO
 
 CREATE TABLE DimDescription (
 	DescriptionID INT PRIMARY KEY IDENTITY,
-	`Description VARCHAR(100),
+	Description VARCHAR(100),
 	Language VARCHAR(100)
 );
 GO
@@ -160,9 +158,6 @@ GO
 ALTER TABLE DimBreed ADD
 CONSTRAINT FK_PrimaryBreed FOREIGN KEY (PrimaryBreed) REFERENCES DimBreedLabels(BreedLabelID),
 CONSTRAINT FK_SecondaryBreed FOREIGN KEY (SecondaryBreed) REFERENCES DimBreedLabels(BreedLabelID);
-
-ALTER TABLE DimBreedLabels ADD
-CONSTRAINT FK_Type FOREIGN KEY (Type) REFERENCES DimType(TypeID);
 
 ALTER TABLE DimColor ADD
 CONSTRAINT FK_PrimaryColor FOREIGN KEY (PrimaryColor) REFERENCES DimColorLabels(ColorLabelID),
