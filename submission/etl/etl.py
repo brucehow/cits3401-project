@@ -17,7 +17,7 @@ def color_data(file, row):
     data = ["", color1, color2, color3]
     file.writerow(data)
 
-def generic(file):
+def generic_data(file):
     file.writerow(["", "Yes"])
     file.writerow(["", "No"])
     file.writerow(["", "Not Sure"])
@@ -67,7 +67,7 @@ def main():
     # Custom headers (Based on the Snowflake Schema)
     header = next(read_train)
     write_breed.writerow(["BreedID", "PrimaryBreed", "SecondaryBreed"])
-    write_color.writerow(["Color 1", "Color 2", "Color 3"])
+    write_color.writerow(["ColorID", "PrimaryColor", "SecondaryColor", "TertiaryColor"])
     write_rescuer.writerow(["RescuerID", "Rescuer"])
     write_health.writerow(["HealthID", "Health"])
 
