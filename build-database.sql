@@ -106,22 +106,21 @@ CREATE TABLE DimAge (
 );
 GO
 
-PRINT CHAR(13) + CHAR(10) + 'CREATING TABLE DimDescription';
+PRINT CHAR(13) + CHAR(10) + 'CREATING TABLE DimMaturitySize';
 GO
 
-CREATE TABLE DimDescription (
-	DescriptionID INT PRIMARY KEY IDENTITY,
-	Description VARCHAR(100),
-	Language VARCHAR(100)
+CREATE TABLE DimMaturitySize (
+	MaturitySizeID INT PRIMARY KEY IDENTITY,
+	MaturitySize VARCHAR(10)
 );
 GO
 
-PRINT CHAR(13) + CHAR(10) + 'CREATING TABLE DimFee';
+PRINT CHAR(13) + CHAR(10) + 'CREATING TABLE DimFurLength';
 GO
 
-CREATE TABLE DimFee (
-	FeeID INT PRIMARY KEY IDENTITY,
-	Fee MONEY
+CREATE TABLE DimFurLength (
+	FurLengthID INT PRIMARY KEY IDENTITY,
+	FurLength VARCHAR(10)
 );
 GO
 
@@ -134,20 +133,64 @@ CREATE TABLE DimVaccinated (
 );
 GO
 
+PRINT CHAR(13) + CHAR(10) + 'CREATING TABLE DimDewormed';
+GO
+
+CREATE TABLE DimDewormed (
+	DewormedID INT PRIMARY KEY IDENTITY,
+	Dewormed VARCHAR(10)
+);
+GO
+
+PRINT CHAR(13) + CHAR(10) + 'CREATING TABLE DimSterilized';
+GO
+
+CREATE TABLE DimDewormed (
+	SterilizedID INT PRIMARY KEY IDENTITY,
+	Sterilized VARCHAR(10)
+);
+GO
+
+PRINT CHAR(13) + CHAR(10) + 'CREATING TABLE DimHealth';
+GO
+
+CREATE TABLE DimDewormed (
+	HealthID INT PRIMARY KEY IDENTITY,
+	Health VARCHAR(10)
+);
+GO
+
+PRINT CHAR(13) + CHAR(10) + 'CREATING TABLE DimResucer';
+GO
+
+CREATE TABLE DimDewormed (
+	RescuerID INT PRIMARY KEY IDENTITY,
+	Rescuer VARCHAR(10)
+);
+GO
+
 PRINT CHAR(13) + CHAR(10) + 'CREATING TABLE FactPetAdoptionRate';
 GO
 
 CREATE TABLE FactPetAdoptionSpeed (
-	AdoptionID INT PRIMARY KEY IDENTITY,
+	PetID INT PRIMARY KEY IDENTITY,
+	PetAltID VARCHHAR(9),
 	BreedID INT,
 	ColorID INT,
 	TypeID INT,
 	GenderID INT,
 	AgeID INT,
 	LocationID INT,
+	MaturitySizeID INT,
+	FurLengthID INT,
 	VaccinatedID INT,
-	DescriptionID INT,
-	FeeID INT,
+	DewormedID INT,
+	SterilizedID INT,
+	HealthID INT,
+	RescuerID VARCHAR(32),
+	VideoAmt INT,
+	PhotoAmt INT,
+	Fee INT,
 	AdoptionSpeed INT
 );
 GO
@@ -178,6 +221,10 @@ CONSTRAINT FK_TypeID FOREIGN KEY (TypeID) REFERENCES DimType(TypeID),
 CONSTRAINT FK_GenderID FOREIGN KEY (GenderID) REFERENCES DimGender(GenderID),
 CONSTRAINT FK_AgeID FOREIGN KEY (AgeID) REFERENCES DimAge(AgeID),
 CONSTRAINT FK_LocationID FOREIGN KEY (LocationID) REFERENCES DimLocation(LocationID),
+CONSTRAINT FK_MaturitySizeID FOREIGN KEY (MaturitySizeID) REFERENCES DimMaturitySize(MaturitySizeID),
+CONSTRAINT FK_FurLengthID FOREIGN KEY (FurLengthID) REFERENCES DimFurLength(FurLengthID),
 CONSTRAINT FK_VaccinatedID FOREIGN KEY (VaccinatedID) REFERENCES DimVaccinated(VaccinatedID),
-CONSTRAINT FK_DescriptionID FOREIGN KEY (DescriptionID) REFERENCES DimDescription(DescriptionID),
-CONSTRAINT FK_FeeID FOREIGN KEY (FeeID) REFERENCES DimFee(FeeID);
+CONSTRAINT FK_DewormedID FOREIGN KEY (DewormedID) REFERENCES DimDewormed(DewormedID),
+CONSTRAINT FK_SterilizedID FOREIGN KEY (SterilizedID) REFERENCES DimSterilized(SterilizedID),
+CONSTRAINT FK_HealthID FOREIGN KEY (HealthID) REFERENCES DimHealth(HealthID),
+CONSTRAINT FK_RescuerID FOREIGN KEY (RescuerID) REFERENCES DimResucer(RescuerID);
