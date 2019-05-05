@@ -12,6 +12,11 @@ def breed_data(file, row):
     data = ["", breed1, breed2]
     file.writerow(data)
 
+def rescuer_data(file, row):
+    rescuer = row[18]
+    data = ["", rescuer]
+    file.writerow(data)
+
 def main():
     # Input/Source file
     train = open("data/train.csv", "r", encoding='ISO-8859-1')
@@ -52,10 +57,12 @@ def main():
     # Custom headers (Based on the Snowflake Schema)
     header = next(read_train)
     write_breed.writerow(["BreedID", "PrimaryBreed", "SecondaryBreed"])
+    write_rescuer.writerow(["RescuerID", "Rescuer"])
 
     # Iterate through each row from train.csv
     for row in read_train:
         breed_data(write_breed, row)
+        rescuer_data(write_rescuer, row)
 
     # TODO Iterate through each row from color_labels.csv
 
