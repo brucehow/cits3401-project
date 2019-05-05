@@ -14,7 +14,9 @@ GO
 USE PetAdoption;
 GO
 
-PRINT CHAR(13) + CHAR(10) + '** INSERTING Dim **';
+PRINT CHAR(13) + CHAR(10) + '** INSERTING Dim DATA **';
+GO
+
 BULK INSERT DimBreed FROM '$(SQLSourceDataPath)DimBreed.csv'
 WITH (
     DATAFILETYPE='char',
