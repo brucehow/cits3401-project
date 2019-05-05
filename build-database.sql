@@ -174,7 +174,7 @@ GO
 
 CREATE TABLE FactPetAdoptionSpeed (
 	PetID INT PRIMARY KEY IDENTITY,
-	PetAltID VARCHHAR(9),
+	PetAltID VARCHAR(9),
 	BreedID INT,
 	ColorID INT,
 	TypeID INT,
