@@ -22,6 +22,11 @@ def location_data(file, row):
     data = ["", location]
     file.writerow(data)
 
+def gender_data(file, row):
+    gender = row[5]
+    data = ["", gender]
+    file.writerow(data)
+
 def generic_data(file):
     file.writerow(["", "Yes"])
     file.writerow(["", "No"])
@@ -74,6 +79,7 @@ def main():
     write_breed.writerow(["BreedID", "PrimaryBreed", "SecondaryBreed"])
     write_color.writerow(["ColorID", "PrimaryColor", "SecondaryColor", "TertiaryColor"])
     write_location.writerow(["LocationID", "Location"])
+    write_gender.writerow(["GenderID", "Gender"])
     write_rescuer.writerow(["RescuerID", "Rescuer"])
     write_health.writerow(["HealthID", "Health"])
 
@@ -83,6 +89,7 @@ def main():
         breed_data(write_breed, row)
         color_data(write_color, row)
         location_data(write_location, row)
+        gender_data(write_gender, row)
         rescuer_data(write_rescuer, row)
 
     # Health
