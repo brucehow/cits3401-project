@@ -17,6 +17,11 @@ def color_data(file, row):
     data = ["", color1, color2, color3]
     file.writerow(data)
 
+def generic(file):
+    file.writerow(["", "Yes"])
+    file.writerow(["", "No"])
+    file.writerow(["", "Not Sure"])
+
 def rescuer_data(file, row):
     rescuer = row[18]
     data = ["", rescuer]
@@ -64,12 +69,24 @@ def main():
     write_breed.writerow(["BreedID", "PrimaryBreed", "SecondaryBreed"])
     write_color.writerow(["Color 1", "Color 2", "Color 3"])
     write_rescuer.writerow(["RescuerID", "Rescuer"])
+    write_health.writerow(["HealthID", "Health"])
+
 
     # Iterate through each row from train.csv
     for row in read_train:
         breed_data(write_breed, row)
         color_data(write_color, row)
         rescuer_data(write_rescuer, row)
+
+    # Health
+    write_health.writerow(["", "Healthy"])
+    write_health.writerow(["", "Minor Injury"])
+    write_health.writerow(["", "Serious Injury"])
+
+    # Sterilized, Dewormed, Vaccinated
+    generic_data(write_sterilized)
+    generic_data(write_dewormed)
+    generic_data(write_vaccinated)
 
     # TODO Iterate through each row from color_labels.csv
 
