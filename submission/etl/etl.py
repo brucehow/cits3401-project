@@ -17,6 +17,11 @@ def color_data(file, row):
     data = ["", color1, color2, color3]
     file.writerow(data)
 
+def location_data(file, row):
+    location = row[17]
+    data = ["", location]
+    file.writerow(data)
+
 def generic_data(file):
     file.writerow(["", "Yes"])
     file.writerow(["", "No"])
@@ -68,6 +73,7 @@ def main():
     header = next(read_train)
     write_breed.writerow(["BreedID", "PrimaryBreed", "SecondaryBreed"])
     write_color.writerow(["ColorID", "PrimaryColor", "SecondaryColor", "TertiaryColor"])
+    write_location.writerow(["LocationID", "Location"])
     write_rescuer.writerow(["RescuerID", "Rescuer"])
     write_health.writerow(["HealthID", "Health"])
 
@@ -76,6 +82,7 @@ def main():
     for row in read_train:
         breed_data(write_breed, row)
         color_data(write_color, row)
+        location_data(write_location, row)
         rescuer_data(write_rescuer, row)
 
     # Health
