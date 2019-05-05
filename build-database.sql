@@ -111,7 +111,7 @@ GO
 
 CREATE TABLE DimMaturitySize (
 	MaturitySizeID INT PRIMARY KEY IDENTITY,
-	MaturitySize VARCHAR(10)
+	MaturitySize VARCHAR(13)
 );
 GO
 
@@ -120,7 +120,7 @@ GO
 
 CREATE TABLE DimFurLength (
 	FurLengthID INT PRIMARY KEY IDENTITY,
-	FurLength VARCHAR(10)
+	FurLength VARCHAR(13)
 );
 GO
 
@@ -129,7 +129,7 @@ GO
 
 CREATE TABLE DimVaccinated (
 	VaccinatedID INT PRIMARY KEY IDENTITY,
-	Vaccinated VARCHAR(10)
+	Vaccinated VARCHAR(8)
 );
 GO
 
@@ -138,7 +138,7 @@ GO
 
 CREATE TABLE DimDewormed (
 	DewormedID INT PRIMARY KEY IDENTITY,
-	Dewormed VARCHAR(10)
+	Dewormed VARCHAR(8)
 );
 GO
 
@@ -147,7 +147,7 @@ GO
 
 CREATE TABLE DimSterilized (
 	SterilizedID INT PRIMARY KEY IDENTITY,
-	Sterilized VARCHAR(10)
+	Sterilized VARCHAR(8)
 );
 GO
 
@@ -156,7 +156,7 @@ GO
 
 CREATE TABLE DimHealth (
 	HealthID INT PRIMARY KEY IDENTITY,
-	Health VARCHAR(10)
+	Health VARCHAR(14)
 );
 GO
 
@@ -165,7 +165,7 @@ GO
 
 CREATE TABLE DimRescuer (
 	RescuerID INT PRIMARY KEY IDENTITY,
-	Rescuer VARCHAR(10)
+	Rescuer VARCHAR(32)
 );
 GO
 
@@ -187,7 +187,7 @@ CREATE TABLE FactPetAdoptionSpeed (
 	DewormedID INT,
 	SterilizedID INT,
 	HealthID INT,
-	RescuerID VARCHAR(32),
+	RescuerID INT,
 	VideoAmt INT,
 	PhotoAmt INT,
 	Fee INT,
