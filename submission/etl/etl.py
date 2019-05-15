@@ -47,6 +47,7 @@ def fur_length_data(file, row):
     data = ["", fur_length]
     file.writerow(data)
 
+# Used for Sterilized, Dewormed, Vaccinated
 def generic_data(file):
     file.writerow(["", "Yes"])
     file.writerow(["", "No"])
@@ -55,6 +56,29 @@ def generic_data(file):
 def rescuer_data(file, row):
     rescuer = row[18]
     data = ["", rescuer]
+    file.writerow(data)
+
+def fact_data(file, row):
+    alt_id = row[21]
+    type = row[0]
+    gender = row[5]
+    maturity_size = row[9]
+    fur_length = row[10]
+    vaccinated = row[11]
+    dewormed = row[12]
+    sterilized = row[13]
+    health = row[14]
+
+    # Measures
+    video_amt = row[19]
+    photo_amt = row[22]
+    fee = row[16]
+    adoptionspeed = row[23]
+
+    # Fact data row, "" replaced with auto-increment
+    data = ["", alt_id, "", "", type, gender, "", "", maturity_size,
+            fur_length, vaccinated, dewormed, sterilized, health,
+            "", video_amt, photo_amt, fee, adoptionspeed]
     file.writerow(data)
 
 def main():
@@ -104,11 +128,18 @@ def main():
     write_age.writerow(["AgeID", "Age"])
     write_maturity_size.writerow(["MaturitySizeID", "MaturitySize"])
     write_fur_length.writerow(["FurLengthID", "FurLength"])
-    write_rescuer.writerow(["RescuerID", "Rescuer"])
+    write_vaccinated.writerow(["VaccinatedID", "Vaccinated"])
+    write_dewormed.writerow(["DewormedID", "Dewormed"])
+    write_sterilized.writerow(["SterilizedID", "Sterilized"])
     write_health.writerow(["HealthID", "Health"])
+    write_rescuer.writerow(["RescuerID", "Rescuer"])
 
+    write_fact.writerow(["PetID", "PetAltID", "BreedID", "ColorID", "TypeID", "GenderID",
+                        "AgeID", "LocationID", "MaturitySizeID", "FurLengthID", "VaccinatedID",
+                        "DewormedID", "SterilizedID", "HealthID", "RescuerID", "VideoAmt",
+                        "PhotoAmt", "Fee", "AdoptionSpeed"])
 
-    # Iterate through each row from train.csv
+    # Populate csv files, iterate through each row from train.csv
     for row in read_train:
         breed_data(write_breed, row)
         color_data(write_color, row)
@@ -119,6 +150,7 @@ def main():
         maturity_size_data(write_maturity_size, row)
         fur_length_data(write_fur_length, row)
         rescuer_data(write_rescuer, row)
+        fact_data(write_fact, row)
 
     # Health
     write_health.writerow(["", "Healthy"])
