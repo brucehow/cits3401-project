@@ -19,6 +19,7 @@ GO
 
 BULK INSERT DimBreed FROM '$(SQLSourceDataPath)DimBreed.csv'
 WITH (
+    FIRSTROW=2,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
     ROWTERMINATOR='\n',
@@ -27,6 +28,7 @@ WITH (
 
 BULK INSERT DimBreedLabels FROM '$(SQLSourceDataPath)DimBreedLabels.csv'
 WITH (
+    FIRSTROW=2,
     CHECK_CONSTRAINTS,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
@@ -36,6 +38,7 @@ WITH (
 
 BULK INSERT DimColor FROM '$(SQLSourceDataPath)DimColor.csv'
 WITH (
+    FIRSTROW=2,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
     ROWTERMINATOR='\n',
@@ -44,6 +47,7 @@ WITH (
 
 BULK INSERT DimColorLabels FROM '$(SQLSourceDataPath)DimColorLabels.csv'
 WITH (
+    FIRSTROW=2,
     CHECK_CONSTRAINTS,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
@@ -53,6 +57,7 @@ WITH (
 
 BULK INSERT DimLocation FROM '$(SQLSourceDataPath)DimLocation.csv'
 WITH (
+    FIRSTROW=2,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
     ROWTERMINATOR='\n',
@@ -61,6 +66,7 @@ WITH (
 
 BULK INSERT DimState FROM '$(SQLSourceDataPath)DimState.csv'
 WITH (
+    FIRSTROW=2,
     CHECK_CONSTRAINTS,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
@@ -70,6 +76,7 @@ WITH (
 
 BULK INSERT DimGender FROM '$(SQLSourceDataPath)DimGender.csv'
 WITH (
+    FIRSTROW=2,
     CHECK_CONSTRAINTS,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
@@ -79,6 +86,7 @@ WITH (
 
 BULK INSERT DimType FROM '$(SQLSourceDataPath)DimType.csv'
 WITH (
+    FIRSTROW=2,
     CHECK_CONSTRAINTS,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
@@ -88,6 +96,7 @@ WITH (
 
 BULK INSERT DimAge FROM '$(SQLSourceDataPath)DimAge.csv'
 WITH (
+    FIRSTROW=2,
     CHECK_CONSTRAINTS,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
@@ -95,8 +104,9 @@ WITH (
     TABLOCK
 );
 
-BULK INSERT DimVaccinated FROM '$(SQLSourceDataPath)DimMaturitySize.csv'
+BULK INSERT DimMaturitySize FROM '$(SQLSourceDataPath)DimMaturitySize.csv'
 WITH (
+    FIRSTROW=2,
     CHECK_CONSTRAINTS,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
@@ -104,8 +114,9 @@ WITH (
     TABLOCK
 );
 
-BULK INSERT DimVaccinated FROM '$(SQLSourceDataPath)DimFurLength.csv'
+BULK INSERT DimFurLength FROM '$(SQLSourceDataPath)DimFurLength.csv'
 WITH (
+    FIRSTROW=2,
     CHECK_CONSTRAINTS,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
@@ -115,6 +126,7 @@ WITH (
 
 BULK INSERT DimVaccinated FROM '$(SQLSourceDataPath)DimVaccinated.csv'
 WITH (
+    FIRSTROW=2,
     CHECK_CONSTRAINTS,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
@@ -122,8 +134,9 @@ WITH (
     TABLOCK
 );
 
-BULK INSERT DimVaccinated FROM '$(SQLSourceDataPath)DimDewormed.csv'
+BULK INSERT DimDewormed FROM '$(SQLSourceDataPath)DimDewormed.csv'
 WITH (
+    FIRSTROW=2,
     CHECK_CONSTRAINTS,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
@@ -131,8 +144,9 @@ WITH (
     TABLOCK
 );
 
-BULK INSERT DimVaccinated FROM '$(SQLSourceDataPath)DimSterilized.csv'
+BULK INSERT DimSterilized FROM '$(SQLSourceDataPath)DimSterilized.csv'
 WITH (
+    FIRSTROW=2,
     CHECK_CONSTRAINTS,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
@@ -140,8 +154,9 @@ WITH (
     TABLOCK
 );
 
-BULK INSERT DimVaccinated FROM '$(SQLSourceDataPath)DimHealth.csv'
+BULK INSERT DimHealth FROM '$(SQLSourceDataPath)DimHealth.csv'
 WITH (
+    FIRSTROW=2,
     CHECK_CONSTRAINTS,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
@@ -149,8 +164,9 @@ WITH (
     TABLOCK
 );
 
-BULK INSERT DimVaccinated FROM '$(SQLSourceDataPath)DimRescuer.csv'
+BULK INSERT DimRescuer FROM '$(SQLSourceDataPath)DimRescuer.csv'
 WITH (
+    FIRSTROW=2,
     CHECK_CONSTRAINTS,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
@@ -161,6 +177,7 @@ WITH (
 
 BULK INSERT FactPetAdoptionSpeed FROM '$(SQLSourceDataPath)FactPetAdoptionSpeed.csv'
 WITH (
+    FIRSTROW=2,
     DATAFILETYPE='char',
     FIELDTERMINATOR=',',
     ROWTERMINATOR='\n',
