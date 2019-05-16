@@ -85,9 +85,11 @@ def main():
     # Input/Source file
     train = open("data/train.csv", "r", encoding='ISO-8859-1')
     color_labels_f = open("data/color_labels.csv", "r")
+    breed_labels_f = open("data/breed_labels.csv", "r")
 
     # Output files
     breed = open("csv/DimBreed.csv", "w")
+    breed_labels = open("csv/DimBreedLabels.csv", "w")
     color = open("csv/DimColor.csv", "w")
     color_labels = open("csv/DimColorLabels.csv", "w")
     location = open("csv/DimLocation.csv", "w")
@@ -103,11 +105,15 @@ def main():
     rescuer = open("csv/DimRescuer.csv", "w")
     fact = open("csv/FactPetAdoptionRate.csv", "w")
 
-    # Reader/Writers
+    # Reader
     read_train = csv.reader(train)
-    write_breed = csv.writer(breed)
-    write_color = csv.writer(color)
+    read_breed_labels = csv.reader(breed_labels_f)
     read_color_labels = csv.reader(color_labels_f)
+
+    # Writers
+    write_breed = csv.writer(breed)
+    write_breed_labels = csv.writer(breed_labels)
+    write_color = csv.writer(color)
     write_color_labels = csv.writer(color_labels)
     write_location = csv.writer(location)
     write_gender = csv.writer(gender)
@@ -168,9 +174,16 @@ def main():
 
     # Iterate through each row from color_labels.csv
     write_color_labels.writerow(next(read_color_labels))
-    write_color_labels.writerow(["0", ""])
+    write_color_labels.writerow([0, ""])
     for row in read_color_labels:
         write_color_labels.writerow([row[0], row[1]])
+
+    # Iterate through each row from breed_labels.csv
+    header = next(read_breed_labels) # Skip the header - dont incl type
+    write_breed_labels.writerow(["BreedLabelID", "BreedName"])
+    write_breed_labels.writerow([0, ""])
+    for row in read_breed_labels:
+        write_breed_labels.writerow([row[0], row[2]])
 
 
 if __name__ == '__main__':
