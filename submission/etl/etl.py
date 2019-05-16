@@ -84,10 +84,12 @@ def fact_data(file, row):
 def main():
     # Input/Source file
     train = open("data/train.csv", "r", encoding='ISO-8859-1')
+    color_labels_f = open("data/color_labels.csv", "r")
 
     # Output files
     breed = open("csv/DimBreed.csv", "w")
     color = open("csv/DimColor.csv", "w")
+    color_labels = open("csv/DimColorLabels.csv", "w")
     location = open("csv/DimLocation.csv", "w")
     gender = open("csv/DimGender.csv", "w")
     pet_type = open("csv/DimType.csv", "w")
@@ -105,6 +107,8 @@ def main():
     read_train = csv.reader(train)
     write_breed = csv.writer(breed)
     write_color = csv.writer(color)
+    read_color_labels = csv.reader(color_labels_f)
+    write_color_labels = csv.writer(color_labels)
     write_location = csv.writer(location)
     write_gender = csv.writer(gender)
     write_pet_type = csv.writer(pet_type)
@@ -162,7 +166,12 @@ def main():
     generic_data(write_dewormed)
     generic_data(write_vaccinated)
 
-    # TODO Iterate through each row from color_labels.csv
+    # Iterate through each row from color_labels.csv
+    write_color_labels.writerow(next(read_color_labels))
+    write_color_labels.writerow(["0", ""])
+    for row in read_color_labels:
+        write_color_labels.writerow([row[0], row[1]])
+
 
 if __name__ == '__main__':
     main()
