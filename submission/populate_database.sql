@@ -27,7 +27,6 @@ WITH (
     TABLOCK
 );
 
-
 BULK INSERT DimBreed FROM '$(SQLSourceDataPath)DimBreed.csv'
 WITH (
     FIRSTROW=2,
