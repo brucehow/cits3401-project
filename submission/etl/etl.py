@@ -7,11 +7,12 @@ Author: Bruce How (22242664) & Haolin Wu (21706137)
 
 import csv
 
-# Global variables used to store already seen rows
+# Global variables used to store already seen rows, prevents duplicates
 seen_breed = []
 seen_color = []
 seen_rescuer = []
 seen_location = []
+seen_age = []
 rowIndex = 0
 
 def breed_data(file, row):
@@ -26,6 +27,7 @@ def breed_data(file, row):
     breed_purity = "Mixed"
     if breed2 == "0":
         breed_purity = "Pure"
+        breed2 = "" # NULL color
 
     data = ["", breed1, breed2, breed_purity]
     file.writerow(data)
@@ -39,8 +41,12 @@ def color_data(file, row):
     seen_color.append([color1, color2, color3])
 
     color_purity = "Mixed"
-    if color2 == "0" or color3 == "0":
+    if color2 == "0":
         color_purity = "Pure"
+        color2 = ""
+        color3 = ""
+    elif color3 == "0":
+        color3 = ""
 
     data = ["", color1, color2, color3, color_purity]
     file.writerow(data)
@@ -55,29 +61,12 @@ def location_data(file, row):
     data = ["", location]
     file.writerow(data)
 
-def gender_data(file, row):
-    gender = row[5]
-    data = ["", gender]
-    file.writerow(data)
-
-def pet_type_data(file, row):
-    pet_type = row[0]
-    data = ["", pet_type]
-    file.writerow(data)
-
 def age_data(file, row):
     age = row[2]
+    if age in seen_age:
+        return
+    seen_age.append(age)
     data = ["", age]
-    file.writerow(data)
-
-def maturity_size_data(file, row):
-    maturity_size = row[9]
-    data = ["", maturity_size]
-    file.writerow(data)
-
-def fur_length_data(file, row):
-    fur_length = row[10]
-    data = ["", fur_length]
     file.writerow(data)
 
 # Used for Sterilized, Dewormed, Vaccinated
@@ -105,9 +94,17 @@ def fact_data(file, row):
     sterilized = row[13]
     health = row[14]
 
+    # No Specified
+    if maturity_size == "0":
+        maturity_size = ""
+    if fur_length == "0":
+        fur_length = ""
+    if health == "0":
+        health = ""
+
     # Measures
     video_amt = row[19]
-    photo_amt = row[22]
+    photo_amt = int(float(row[22])) # PhotoAmt is of type float in train.csv
     fee = row[16]
     adoptionspeed = row[23]
 
@@ -136,6 +133,12 @@ def fact_data(file, row):
             location = i+1
             break
 
+    age = ""
+    for i in range(0, len(seen_age)):
+        if seen_age[i] == row[2]:
+            age = i+1
+            break
+
     # Pet age
     global rowIndex
     rowIndex += 1 # Each row represents an individual pet's age
@@ -151,6 +154,7 @@ def main():
     train = open("data/train.csv", "r", encoding='ISO-8859-1')
     color_labels_f = open("data/color_labels.csv", "r")
     breed_labels_f = open("data/breed_labels.csv", "r")
+    state_labels_f = open("data/state_labels.csv", "r")
 
     # Output files
     breed = open("csv/DimBreed.csv", "w")
@@ -158,6 +162,7 @@ def main():
     color = open("csv/DimColor.csv", "w")
     color_labels = open("csv/DimColorLabels.csv", "w")
     location = open("csv/DimLocation.csv", "w")
+    state = open("csv/DimState.csv", "w")
     gender = open("csv/DimGender.csv", "w")
     pet_type = open("csv/DimType.csv", "w")
     age = open("csv/DimAge.csv", "w")
@@ -174,6 +179,7 @@ def main():
     read_train = csv.reader(train)
     read_breed_labels = csv.reader(breed_labels_f)
     read_color_labels = csv.reader(color_labels_f)
+    read_state_labels = csv.reader(state_labels_f)
 
     # Writers
     write_breed = csv.writer(breed)
@@ -181,6 +187,7 @@ def main():
     write_color = csv.writer(color)
     write_color_labels = csv.writer(color_labels)
     write_location = csv.writer(location)
+    write_state_labels = csv.writer(state)
     write_gender = csv.writer(gender)
     write_pet_type = csv.writer(pet_type)
     write_age = csv.writer(age)
@@ -214,16 +221,33 @@ def main():
                         "DewormedID", "SterilizedID", "HealthID", "RescuerID", "VideoAmt",
                         "PhotoAmt", "Fee", "AdoptionSpeed"])
 
-    # Populate csv files, iterate through each row from train.csv
+    # Extraction of data from color_labels.csv
+    print("Extracting data from color_labels.csv")
+    write_color_labels.writerow(next(read_color_labels))
+    for row in read_color_labels:
+        write_color_labels.writerow(["", row[1]])
+
+    # Extraction of data from breed_labels.csv
+    print("Extracting data from breed_labels.csv")
+    header = next(read_breed_labels) # Skip the header - dont incl type
+    write_breed_labels.writerow(["BreedLabelID", "BreedName"])
+    for row in read_breed_labels:
+        write_breed_labels.writerow(["", row[2]])
+
+    # Extraction of data from state_labels.csv
+    print("Extracting data from state_labels.csv")
+    header = next(read_state_labels)
+    write_state_labels.writerow(["StateID", "State"])
+    for row in read_state_labels:
+        write_state_labels.writerow([row[0], row[1]])
+
+    # Breed, Color, Location, Age, Rescuer & Fact dimensions
+    print("Extracting data from train.csv")
     for row in read_train:
         breed_data(write_breed, row)
         color_data(write_color, row)
         location_data(write_location, row)
-        gender_data(write_gender, row)
-        pet_type_data(write_pet_type, row)
         age_data(write_age, row)
-        maturity_size_data(write_maturity_size, row)
-        fur_length_data(write_fur_length, row)
         rescuer_data(write_rescuer, row)
         fact_data(write_fact, row)
 
@@ -232,22 +256,30 @@ def main():
     write_health.writerow(["", "Minor Injury"])
     write_health.writerow(["", "Serious Injury"])
 
+    # Furlength
+    write_fur_length.writerow(["", "Short"])
+    write_fur_length.writerow(["", "Medium"])
+    write_fur_length.writerow(["", "Long"])
+
+    # MaturitySize
+    write_maturity_size.writerow(["", "Small"])
+    write_maturity_size.writerow(["", "Medium"])
+    write_maturity_size.writerow(["", "Large"])
+    write_maturity_size.writerow(["", "Extra Large"])
+
+    # Gender
+    write_gender.writerow(["", "Male"])
+    write_gender.writerow(["", "Female"])
+    write_gender.writerow(["", "Mixed"])
+
+    # Type
+    write_pet_type.writerow(["", "Dog"])
+    write_pet_type.writerow(["", "Cat"])
+
     # Sterilized, Dewormed, Vaccinated
     generic_data(write_sterilized)
     generic_data(write_dewormed)
     generic_data(write_vaccinated)
-
-    # Iterate through each row from color_labels.csv
-    write_color_labels.writerow(next(read_color_labels))
-    for row in read_color_labels:
-        write_color_labels.writerow(["", row[1]])
-
-    # Iterate through each row from breed_labels.csv
-    header = next(read_breed_labels) # Skip the header - dont incl type
-    write_breed_labels.writerow(["BreedLabelID", "BreedName"])
-    for row in read_breed_labels:
-        write_breed_labels.writerow(["", row[2]])
-
 
 if __name__ == '__main__':
     main()
