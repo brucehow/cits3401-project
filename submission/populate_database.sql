@@ -6,7 +6,7 @@ This script should only be run after running build_database.sql successfully.
 Authors: Bruce How (22242664) & Haolin Wu (21706137)
 */
 
- :setvar SQLSourceDataPath "csv\"
+ :setvar SQLSourceDataPath "etl\csv\"
 
 PRINT CHAR(13) + CHAR(10) + '** INSERTING DATA **';
 GO
