@@ -1,3 +1,8 @@
 .vs/
 .idea/
 *.DS_STORE
+submission/report/report.aux
+submission/report/report.fdb_latexmk
+submission/report/report.fls
+submission/report/report.log
+submission/report/report.synctex.gz
