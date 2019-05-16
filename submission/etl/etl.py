@@ -22,7 +22,12 @@ def breed_data(file, row):
         return # Already exists, don't add duplicates
 
     seen_breed.append([breed1, breed2])
-    data = ["", breed1, breed2]
+
+    breed_purity = "Mixed"
+    if breed2 == "0":
+        breed_purity = "Pure"
+
+    data = ["", breed1, breed2, breed_purity]
     file.writerow(data)
 
 def color_data(file, row):
@@ -32,7 +37,12 @@ def color_data(file, row):
         return
 
     seen_color.append([color1, color2, color3])
-    data = ["", color1, color2, color3]
+
+    color_purity = "Mixed"
+    if color2 == "0" or color3 == "0":
+        color_purity = "Pure"
+
+    data = ["", color1, color2, color3, color_purity]
     file.writerow(data)
 
 def location_data(file, row):
@@ -185,8 +195,8 @@ def main():
 
     # Custom headers (Based on the Snowflake Schema)
     header = next(read_train)
-    write_breed.writerow(["BreedID", "PrimaryBreed", "SecondaryBreed"])
-    write_color.writerow(["ColorID", "PrimaryColor", "SecondaryColor", "TertiaryColor"])
+    write_breed.writerow(["BreedID", "PrimaryBreed", "SecondaryBreed", "BreedPurity"])
+    write_color.writerow(["ColorID", "PrimaryColor", "SecondaryColor", "TertiaryColor", "ColorPurity"])
     write_location.writerow(["LocationID", "Location"])
     write_gender.writerow(["GenderID", "Gender"])
     write_pet_type.writerow(["TypeID", "Type"])
