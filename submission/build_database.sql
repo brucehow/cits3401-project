@@ -27,7 +27,8 @@ GO
 CREATE TABLE DimBreed (
 	BreedID INT PRIMARY KEY IDENTITY,
 	PrimaryBreed INT NOT NULL,
-	SecondaryBreed INT
+	SecondaryBreed INT,
+	BreedPurity ENUM("Pure", "Mixed")
 );
 GO
 
@@ -47,7 +48,8 @@ CREATE TABLE DimColor (
 	ColorID INT PRIMARY KEY IDENTITY,
 	PrimaryColor INT NOT NULL,
 	SecondaryColor INT,
-	TertiaryColor INT
+	TertiaryColor INT,
+	ColorPurity ENUM("Pure", "Mixed")
 );
 GO
 

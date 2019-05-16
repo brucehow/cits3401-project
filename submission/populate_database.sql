@@ -17,6 +17,17 @@ GO
 PRINT CHAR(13) + CHAR(10) + '** INSERTING Dim DATA **';
 GO
 
+BULK INSERT DimBreedLabels FROM '$(SQLSourceDataPath)DimBreedLabels.csv'
+WITH (
+    FIRSTROW=2,
+    CHECK_CONSTRAINTS,
+    DATAFILETYPE='char',
+    FIELDTERMINATOR=',',
+    ROWTERMINATOR='\n',
+    TABLOCK
+);
+
+
 BULK INSERT DimBreed FROM '$(SQLSourceDataPath)DimBreed.csv'
 WITH (
     FIRSTROW=2,
@@ -26,7 +37,7 @@ WITH (
     TABLOCK
 );
 
-BULK INSERT DimBreedLabels FROM '$(SQLSourceDataPath)DimBreedLabels.csv'
+BULK INSERT DimColorLabels FROM '$(SQLSourceDataPath)DimColorLabels.csv'
 WITH (
     FIRSTROW=2,
     CHECK_CONSTRAINTS,
@@ -45,15 +56,6 @@ WITH (
     TABLOCK
 );
 
-BULK INSERT DimColorLabels FROM '$(SQLSourceDataPath)DimColorLabels.csv'
-WITH (
-    FIRSTROW=2,
-    CHECK_CONSTRAINTS,
-    DATAFILETYPE='char',
-    FIELDTERMINATOR=',',
-    ROWTERMINATOR='\n',
-    TABLOCK
-);
 
 BULK INSERT DimLocation FROM '$(SQLSourceDataPath)DimLocation.csv'
 WITH (
