@@ -177,7 +177,7 @@ WITH (
 );
 
 
-BULK INSERT FactPetAdoptionSpeed FROM '$(SQLSourceDataPath)FactPetAdoptionSpeed.csv'
+BULK INSERT FactPetAdoptionRate FROM '$(SQLSourceDataPath)FactPetAdoptionRate.csv'
 WITH (
     FIRSTROW=2,
     DATAFILETYPE='char',
