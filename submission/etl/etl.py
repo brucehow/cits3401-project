@@ -13,7 +13,6 @@ seen_color = []
 seen_rescuer = []
 seen_location = []
 seen_age = []
-rowIndex = 0
 
 def breed_data(file, row):
     breed1, breed2 = row[3], row[4]
@@ -65,6 +64,7 @@ def age_data(file, row):
     age = row[2]
     if age in seen_age:
         return
+
     seen_age.append(age)
     data = ["", age]
     file.writerow(data)
@@ -139,12 +139,8 @@ def fact_data(file, row):
             age = i+1
             break
 
-    # Pet age
-    global rowIndex
-    rowIndex += 1 # Each row represents an individual pet's age
-
     # Fact data row, "" replaced with auto-increment
-    data = ["", alt_id, breed, color, type, gender, rowIndex, location, maturity_size,
+    data = ["", alt_id, breed, color, type, gender, age, location, maturity_size,
             fur_length, vaccinated, dewormed, sterilized, health,
             rescuer, video_amt, photo_amt, fee, adoptionspeed]
     file.writerow(data)
