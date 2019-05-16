@@ -7,18 +7,40 @@ Author: Bruce How (22242664) & Haolin Wu (21706137)
 
 import csv
 
+# Global variables used to store already seen rows
+seen_breed = []
+seen_color = []
+seen_rescuer = []
+seen_location = []
+rowIndex = 0
+
 def breed_data(file, row):
     breed1, breed2 = row[3], row[4]
+
+    # Check to see if we have already seen the breed
+    if [breed1, breed2] in seen_breed:
+        return # Already exists, don't add duplicates
+
+    seen_breed.append([breed1, breed2])
     data = ["", breed1, breed2]
     file.writerow(data)
 
 def color_data(file, row):
     color1, color2, color3 = row[6], row[7], row[8]
+
+    if [color1, color2, color3] in seen_color:
+        return
+
+    seen_color.append([color1, color2, color3])
     data = ["", color1, color2, color3]
     file.writerow(data)
 
 def location_data(file, row):
     location = row[17]
+
+    if location in seen_location:
+        return
+    seen_location.append(location)
     data = ["", location]
     file.writerow(data)
 
@@ -55,6 +77,9 @@ def generic_data(file):
 
 def rescuer_data(file, row):
     rescuer = row[18]
+    if rescuer in seen_rescuer:
+        return
+    seen_rescuer.append(rescuer)
     data = ["", rescuer]
     file.writerow(data)
 
@@ -75,10 +100,39 @@ def fact_data(file, row):
     fee = row[16]
     adoptionspeed = row[23]
 
+    # Foreign Keys
+    breed = ""
+    for i in range(0, len(seen_breed)):
+        if seen_breed[i] == [row[3], row[4]]:
+            breed = i+1 # Foreign key is index + 1
+            break
+
+    color = ""
+    for i in range(0, len(seen_color)):
+        if seen_color[i] == [row[6], row[7], row[8]]:
+            color = i+1
+            break
+
+    rescuer = ""
+    for i in range(0, len(seen_rescuer)):
+        if seen_rescuer[i] == row[18]:
+            rescuer = i+1
+            break
+
+    location = ""
+    for i in range(0, len(seen_location)):
+        if seen_location[i] == row[17]:
+            rescuer = i+1
+            break
+
+    # Pet age
+    global rowIndex
+    rowIndex += 1 # Each row represents an individual pet's age
+
     # Fact data row, "" replaced with auto-increment
-    data = ["", alt_id, "", "", type, gender, "", "", maturity_size,
+    data = ["", alt_id, breed, color, type, gender, rowIndex, location, maturity_size,
             fur_length, vaccinated, dewormed, sterilized, health,
-            "", video_amt, photo_amt, fee, adoptionspeed]
+            rescuer, video_amt, photo_amt, fee, adoptionspeed]
     file.writerow(data)
 
 def main():
@@ -174,16 +228,14 @@ def main():
 
     # Iterate through each row from color_labels.csv
     write_color_labels.writerow(next(read_color_labels))
-    write_color_labels.writerow([0, ""])
     for row in read_color_labels:
-        write_color_labels.writerow([row[0], row[1]])
+        write_color_labels.writerow(["", row[1]])
 
     # Iterate through each row from breed_labels.csv
     header = next(read_breed_labels) # Skip the header - dont incl type
     write_breed_labels.writerow(["BreedLabelID", "BreedName"])
-    write_breed_labels.writerow([0, ""])
     for row in read_breed_labels:
-        write_breed_labels.writerow([row[0], row[2]])
+        write_breed_labels.writerow(["", row[2]])
 
 
 if __name__ == '__main__':
