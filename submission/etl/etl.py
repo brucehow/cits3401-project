@@ -40,6 +40,7 @@ def location_data(file, row):
 
     if location in seen_location:
         return
+
     seen_location.append(location)
     data = ["", location]
     file.writerow(data)
@@ -122,7 +123,7 @@ def fact_data(file, row):
     location = ""
     for i in range(0, len(seen_location)):
         if seen_location[i] == row[17]:
-            rescuer = i+1
+            location = i+1
             break
 
     # Pet age
