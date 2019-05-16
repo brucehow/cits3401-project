@@ -28,7 +28,8 @@ CREATE TABLE DimBreed (
 	BreedID INT PRIMARY KEY IDENTITY,
 	PrimaryBreed INT NOT NULL,
 	SecondaryBreed INT,
-	BreedPurity ENUM("Pure", "Mixed")
+	BreedPurity VARCHAR(5) NOT NULL CHECK (BreedPurity IN('Pure', 'Mixed'))
+	-- Equivalent to ENUM('Pure', 'Mixed')
 );
 GO
 
@@ -49,7 +50,8 @@ CREATE TABLE DimColor (
 	PrimaryColor INT NOT NULL,
 	SecondaryColor INT,
 	TertiaryColor INT,
-	ColorPurity ENUM("Pure", "Mixed")
+	ColorPurity VARCHAR(5) NOT NULL CHECK (ColorPurity IN('Pure', 'Mixed'))
+	-- Equivalent to ENUM('Pure', 'Mixed')
 );
 GO
 
