@@ -4,10 +4,12 @@ SQL Script for building the database 'PetAdoption'
 Authors: Bruce How (22242664) & Haolin Wu (21706137)
 */
 
-USE master
+USE master;
 GO
 
 IF EXISTS (SELECT [name] FROM [master].[sys].[databases] WHERE [name] = N'PetAdoption')
+ALTER DATABASE PetAdoption SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+GO
 DROP DATABASE PetAdoption;
 PRINT CHAR(13) + CHAR(10) + 'DROPPED EXISTING DATABASE';
 GO
@@ -51,7 +53,6 @@ CREATE TABLE DimColor (
 	SecondaryColor INT,
 	TertiaryColor INT,
 	ColorPurity VARCHAR(5) NOT NULL CHECK (ColorPurity IN('Pure', 'Mixed'))
-	-- Equivalent to ENUM('Pure', 'Mixed')
 );
 GO
 
@@ -177,7 +178,7 @@ GO
 
 CREATE TABLE DimAdoptionSpeed (
 	AdoptionSpeedID INT PRIMARY KEY IDENTITY(0,1), -- Starting key value is 0 for instant
-	AdoptionSpeed VARCHAR(7) NOT NULL CHECK (BreedPurity IN('Instant', 'Fast', 'Average', 'Slow')),
+	AdoptionSpeed VARCHAR(7) NOT NULL CHECK (AdoptionSpeed IN('Instant', 'Fast', 'Average', 'Slow')),
 	ListingDuration INT NOT NULL
 );
 GO
