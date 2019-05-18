@@ -175,6 +175,15 @@ WITH (
     TABLOCK
 );
 
+BULK INSERT DimRescuer FROM '$(SQLSourceDataPath)DimAdoptionSpeed.csv'
+WITH (
+    FIRSTROW=2,
+    CHECK_CONSTRAINTS,
+    DATAFILETYPE='char',
+    FIELDTERMINATOR=',',
+    ROWTERMINATOR='\n',
+    TABLOCK
+);
 
 BULK INSERT FactPetAdoptionRate FROM '$(SQLSourceDataPath)FactPetAdoptionRate.csv'
 WITH (

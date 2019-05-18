@@ -172,10 +172,20 @@ CREATE TABLE DimRescuer (
 );
 GO
 
-PRINT CHAR(13) + CHAR(10) + 'CREATING TABLE FactPetAdoptionRate';
+PRINT CHAR(13) + CHAR(10) + 'CREATING TABLE DimAdoptionSpeed';
 GO
 
-CREATE TABLE FactPetAdoptionRate (
+CREATE TABLE DimAdoptionSpeed (
+	AdoptionSpeedID INT PRIMARY KEY IDENTITY(0,1), -- Starting key value is 0 for instant
+	AdoptionSpeed VARCHAR(7) NOT NULL CHECK (BreedPurity IN('Instant', 'Fast', 'Average', 'Slow')),
+	ListingDuration INT NOT NULL
+);
+GO
+
+PRINT CHAR(13) + CHAR(10) + 'CREATING TABLE FactPetAdoptionSpeed';
+GO
+
+CREATE TABLE FactPetAdoptionSpeed (
 	PetID INT PRIMARY KEY IDENTITY,
 	PetAltID VARCHAR(9),
 	BreedID INT,
@@ -194,7 +204,7 @@ CREATE TABLE FactPetAdoptionRate (
 	VideoAmt INT,
 	PhotoAmt INT,
 	Fee INT,
-	AdoptionRate INT
+	AdoptionSpeedID INT
 );
 GO
 
@@ -217,7 +227,7 @@ GO
 PRINT CHAR(13) + CHAR(10) + 'ADDING DIM FACT RELATION CONSTRAINTS';
 GO
 
-ALTER TABLE FactPetAdoptionRate ADD
+ALTER TABLE FactPetAdoptionSpeed ADD
 CONSTRAINT FK_BreedID FOREIGN KEY (BreedID) REFERENCES DimBreed(BreedID),
 CONSTRAINT FK_ColorID FOREIGN KEY (ColorID) REFERENCES DimColor(ColorID),
 CONSTRAINT FK_TypeID FOREIGN KEY (TypeID) REFERENCES DimType(TypeID),
@@ -230,4 +240,5 @@ CONSTRAINT FK_VaccinatedID FOREIGN KEY (VaccinatedID) REFERENCES DimVaccinated(V
 CONSTRAINT FK_DewormedID FOREIGN KEY (DewormedID) REFERENCES DimDewormed(DewormedID),
 CONSTRAINT FK_SterilizedID FOREIGN KEY (SterilizedID) REFERENCES DimSterilized(SterilizedID),
 CONSTRAINT FK_HealthID FOREIGN KEY (HealthID) REFERENCES DimHealth(HealthID),
-CONSTRAINT FK_RescuerID FOREIGN KEY (RescuerID) REFERENCES DimRescuer(RescuerID);
+CONSTRAINT FK_RescuerID FOREIGN KEY (RescuerID) REFERENCES DimRescuer(RescuerID),
+CONSTRAINT FK_AdoptionSpeedID FOREIGN KEY (AdoptionSpeed) REFERENCES DimAdoptionSpeed(AdoptionSpeedID);
