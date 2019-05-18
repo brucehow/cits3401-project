@@ -242,4 +242,4 @@ CONSTRAINT FK_DewormedID FOREIGN KEY (DewormedID) REFERENCES DimDewormed(Deworme
 CONSTRAINT FK_SterilizedID FOREIGN KEY (SterilizedID) REFERENCES DimSterilized(SterilizedID),
 CONSTRAINT FK_HealthID FOREIGN KEY (HealthID) REFERENCES DimHealth(HealthID),
 CONSTRAINT FK_RescuerID FOREIGN KEY (RescuerID) REFERENCES DimRescuer(RescuerID),
-CONSTRAINT FK_AdoptionSpeedID FOREIGN KEY (AdoptionSpeed) REFERENCES DimAdoptionSpeed(AdoptionSpeedID);
+CONSTRAINT FK_AdoptionSpeedID FOREIGN KEY (AdoptionSpeedID) REFERENCES DimAdoptionSpeed(AdoptionSpeedID);
