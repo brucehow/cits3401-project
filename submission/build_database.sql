@@ -205,6 +205,7 @@ CREATE TABLE FactPetAdoptionSpeed (
 	VideoAmt INT,
 	PhotoAmt INT,
 	Fee INT,
+	Quantity INT,
 	AdoptionSpeedID INT
 );
 GO
