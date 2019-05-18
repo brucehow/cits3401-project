@@ -175,7 +175,7 @@ WITH (
     TABLOCK
 );
 
-BULK INSERT DimRescuer FROM '$(SQLSourceDataPath)DimAdoptionSpeed.csv'
+BULK INSERT DimAdoptionSpeed FROM '$(SQLSourceDataPath)DimAdoptionSpeed.csv'
 WITH (
     FIRSTROW=2,
     CHECK_CONSTRAINTS,
