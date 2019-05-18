@@ -93,6 +93,7 @@ def fact_data(file, row):
     dewormed = row[12]
     sterilized = row[13]
     health = row[14]
+    quantity = row[15]
 
     # No Specified
     if maturity_size == "0":
@@ -142,7 +143,7 @@ def fact_data(file, row):
     # Fact data row, "" replaced with auto-increment
     data = ["", alt_id, breed, color, type, gender, age, location, maturity_size,
             fur_length, vaccinated, dewormed, sterilized, health,
-            rescuer, video_amt, photo_amt, fee, adoptionspeed]
+            rescuer, video_amt, photo_amt, fee, quantity, adoptionspeed]
     file.writerow(data)
 
 def main():
@@ -218,7 +219,7 @@ def main():
     write_fact.writerow(["PetID", "PetAltID", "BreedID", "ColorID", "TypeID", "GenderID",
                         "AgeID", "LocationID", "MaturitySizeID", "FurLengthID", "VaccinatedID",
                         "DewormedID", "SterilizedID", "HealthID", "RescuerID", "VideoAmt",
-                        "PhotoAmt", "Fee", "AdoptionSpeed"])
+                        "PhotoAmt", "Fee", "Quantity", "AdoptionSpeed"])
 
     # Extraction of data from color_labels.csv
     print("Extracting data from color_labels.csv")
