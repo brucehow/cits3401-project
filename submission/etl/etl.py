@@ -169,6 +169,7 @@ def main():
     sterilized = open("csv/DimSterilized.csv", "w")
     health = open("csv/DimHealth.csv", "w")
     rescuer = open("csv/DimRescuer.csv", "w")
+    adoption_speed = open("csv/DimAdoptionSpeed.csv", "w")
     fact = open("csv/FactPetAdoptionRate.csv", "w")
 
     # Reader
@@ -194,6 +195,7 @@ def main():
     write_sterilized = csv.writer(sterilized)
     write_health = csv.writer(health)
     write_rescuer = csv.writer(rescuer)
+    write_adoption_speed = csv.writer(adoption_speed)
     write_fact = csv.writer(fact)
 
     # Custom headers (Based on the Snowflake Schema)
@@ -210,6 +212,7 @@ def main():
     write_dewormed.writerow(["DewormedID", "Dewormed"])
     write_sterilized.writerow(["SterilizedID", "Sterilized"])
     write_health.writerow(["HealthID", "Health"])
+    write_adoption_speed.writerow(["AdoptionSpeedID", "AdoptionSpeed", "ListingDuration"])
     write_rescuer.writerow(["RescuerID", "Rescuer"])
 
     write_fact.writerow(["PetID", "PetAltID", "BreedID", "ColorID", "TypeID", "GenderID",
@@ -276,6 +279,12 @@ def main():
     generic_data(write_sterilized)
     generic_data(write_dewormed)
     generic_data(write_vaccinated)
+
+    # Adoption speed
+    write_adoption_speed.writerow(["", "Instant", 0])
+    write_adoption_speed.writerow(["", "Fast", 7])
+    write_adoption_speed.writerow(["", "Average", 30])
+    write_adoption_speed.writerow(["", "Slow", 90])
 
 if __name__ == '__main__':
     main()
