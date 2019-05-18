@@ -170,7 +170,7 @@ def main():
     health = open("csv/DimHealth.csv", "w")
     rescuer = open("csv/DimRescuer.csv", "w")
     adoption_speed = open("csv/DimAdoptionSpeed.csv", "w")
-    fact = open("csv/FactPetAdoptionRate.csv", "w")
+    fact = open("csv/FactPetAdoptionSpeed.csv", "w")
 
     # Reader
     read_train = csv.reader(train)
