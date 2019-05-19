@@ -286,6 +286,7 @@ def main():
     write_adoption_speed.writerow(["", "Fast", 7])
     write_adoption_speed.writerow(["", "Average", 30])
     write_adoption_speed.writerow(["", "Slow", 90])
+    write_adoption_speed.writerow(["", "Not Adopted", ]) # NULL valued duration
 
 if __name__ == '__main__':
     main()

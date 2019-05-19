@@ -178,8 +178,8 @@ GO
 
 CREATE TABLE DimAdoptionSpeed (
 	AdoptionSpeedID INT PRIMARY KEY IDENTITY(0,1), -- Starting key value is 0 for instant
-	AdoptionSpeed VARCHAR(7) NOT NULL CHECK (AdoptionSpeed IN('Instant', 'Fast', 'Average', 'Slow')),
-	ListingDuration INT NOT NULL
+	AdoptionSpeed VARCHAR(11) NOT NULL CHECK (AdoptionSpeed IN('Instant', 'Fast', 'Average', 'Slow', 'Not Adopted')),
+	ListingDuration INT
 );
 GO
 
