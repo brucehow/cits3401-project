@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "PetAdoption", "PetAdoption\PetAdoption.dwproj", "{FF4F4B68-8E9B-4A8C-912F-776F18D17100}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF4F4B68-8E9B-4A8C-912F-776F18D17100}.Development|Default.ActiveCfg = Development
+		{FF4F4B68-8E9B-4A8C-912F-776F18D17100}.Development|Default.Build.0 = Development
+		{FF4F4B68-8E9B-4A8C-912F-776F18D17100}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43520EA2-9335-4852-B0A1-71DC0614DE41}
+	EndGlobalSection
+EndGlobal

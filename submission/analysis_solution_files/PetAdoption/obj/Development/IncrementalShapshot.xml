@@ -1,0 +1,166 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>PetAdoption</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>U9ghIXP0o5fDXtANNDC1/1iUOM8=5/20/2019 9:12:49 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Pet Adoption</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>s5nXBIYNmT/XwrpU5RsPqYJt424=5/20/2019 9:13:57 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Pet Adoption</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>wSlIK9nenZ/XplvLtmQdequO0Kk=5/20/2019 10:24:22 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Health</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>oiL9a0dE2BWJGYmdtVK3lVbigrU=5/20/2019 10:24:22 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Location</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>sKOFn7DqsYyGYpDI5u2FPmbaQvA=5/20/2019 10:26:41 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Breed</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>rTzIdrfmPqrsKMc9615l+LFkifY=5/20/2019 10:28:11 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Dewormed</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>NpD5XnJVl1bElBNWA+yTILGOw4I=5/20/2019 10:28:11 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Rescuer</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>VR3ajQ04KRwAj12MuZIROpelNYc=5/20/2019 10:30:42 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Adoption Speed</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>h1QqBDhT1o08KtY0d10wmvXEBY0=5/20/2019 10:28:11 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Fur Length</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>iNsPUwr7qN2BdP38eNF/Hqse51w=5/20/2019 10:28:11 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Age</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Xz2765LkZQzrX9OCGu1OfepKhTE=5/20/2019 10:24:22 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Type</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>SpaFLIbAoFypPt3+eNWarUhW7VQ=5/20/2019 10:24:22 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Gender</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ktJ3bmwD96w4sy+QAjYJLVgibco=5/20/2019 10:28:11 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Maturity Size</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>C6I2nbSA5ItB8gRXFhmbiK0UgAo=5/20/2019 10:31:18 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Vaccinated</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>lB33vxZH+ZqeGlhmbd41xyYYsxc=5/20/2019 10:32:17 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Sterilized</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>+PE0jE020Ktqnk9CQOf/5n8Qjwo=5/20/2019 9:26:07 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Color</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>rS+ukZZ7uUutU+ACNqyIlt5Ba+w=5/20/2019 10:29:03 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Breed Labels</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>/ObFAXBBR7M/vLVOwpS5noEJWQA=5/20/2019 10:29:03 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Dim Color Labels</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>agW4S7siEs2xT/oWHoozVHtbKNg=5/20/2019 10:31:18 PM5/20/2019 9:27:51 PM027jMUnndmDVoSsFXlnsm95PpTg=5/20/2019 9:23:32 PM5/20/2019 9:27:51 PM</TimeStamp>
+        <ID>
+          <String>Pet Adoption</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>2/orrIeLnAONwoLHnM7yTvQRMz8=5/20/2019 9:12:02 PM5/20/2019 9:27:51 PM</TimeStamp>
+      <ID>
+        <String>PetAdoption</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2019-05-20T14:45:41.103333Z</LastDeployed>
+</DeploymentSnapshot>

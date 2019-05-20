@@ -1,0 +1,470 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="345ed1cb-24d4-41ca-8537-807b42c3a740" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Pet Adoption</ID>
+  <Name>Pet Adoption</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Pet Adoption</DataSourceID>
+  <Schema>
+    <xs:schema id="Pet_x0020_Adoption" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Pet_x0020_Adoption" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="52f65fb3-ed9d-4164-a86a-9d5fda5462bf">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DimAdoptionSpeed" msprop:design-time-name="02bc0176-6325-4540-a215-edec199819ee" msprop:DbTableName="DimAdoptionSpeed" msprop:FriendlyName="DimAdoptionSpeed" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AdoptionSpeedID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="fdf1b6e7-7029-40c1-9449-1122b16bdfea" msprop:DbColumnName="AdoptionSpeedID" msprop:FriendlyName="AdoptionSpeedID" type="xs:int" />
+                  <xs:element name="AdoptionSpeed" msprop:design-time-name="ba02c240-fa48-4a13-af81-4eaae38257c9" msprop:DbColumnName="AdoptionSpeed" msprop:FriendlyName="AdoptionSpeed">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="11" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ListingDuration" msprop:design-time-name="3037a9d2-5201-46f6-be27-581d9a17a228" msprop:DbColumnName="ListingDuration" msprop:FriendlyName="ListingDuration" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimAge" msprop:design-time-name="7619c00b-6a0c-4c4b-91dd-18acfc36f900" msprop:DbTableName="DimAge" msprop:FriendlyName="DimAge" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AgeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="99d53456-78eb-4b9c-8a2b-2dfce7bde6d2" msprop:DbColumnName="AgeID" msprop:FriendlyName="AgeID" type="xs:int" />
+                  <xs:element name="Age" msprop:design-time-name="c55d82e3-7725-4ba9-8658-17ac9992715f" msprop:DbColumnName="Age" msprop:FriendlyName="Age" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimBreed" msprop:design-time-name="eb3bba0a-0603-4182-80bd-1c775401e978" msprop:DbTableName="DimBreed" msprop:FriendlyName="DimBreed" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="BreedID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="376d1b79-a1e2-467c-8de6-d435e9a7adf0" msprop:DbColumnName="BreedID" msprop:FriendlyName="BreedID" type="xs:int" />
+                  <xs:element name="PrimaryBreed" msprop:design-time-name="6dd975af-26c3-45b8-8a38-df5871893bd9" msprop:DbColumnName="PrimaryBreed" msprop:FriendlyName="PrimaryBreed" type="xs:int" />
+                  <xs:element name="SecondaryBreed" msprop:design-time-name="e9c00b50-0b6f-4c08-bb43-c3d1f12c08a6" msprop:DbColumnName="SecondaryBreed" msprop:FriendlyName="SecondaryBreed" type="xs:int" minOccurs="0" />
+                  <xs:element name="BreedPurity" msprop:design-time-name="b688cf60-7b2d-4ae5-a159-1a0ce69c0eb6" msprop:DbColumnName="BreedPurity" msprop:FriendlyName="BreedPurity">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="5" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimBreedLabels" msprop:design-time-name="08e9bcf4-a691-468b-b763-34b6a701c228" msprop:DbTableName="DimBreedLabels" msprop:FriendlyName="DimBreedLabels" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="BreedLabelID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="2a141200-dca5-458c-b79b-8b9f79a03168" msprop:DbColumnName="BreedLabelID" msprop:FriendlyName="BreedLabelID" type="xs:int" />
+                  <xs:element name="BreedName" msprop:design-time-name="29990830-0db1-4fef-af50-8268c23f7825" msprop:DbColumnName="BreedName" msprop:FriendlyName="BreedName" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimColor" msprop:design-time-name="6c6c9f1e-47c9-4e70-a907-b703723662bf" msprop:DbTableName="DimColor" msprop:FriendlyName="DimColor" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ColorID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="8ca69c4a-939e-4999-ad95-73f726d8a157" msprop:DbColumnName="ColorID" msprop:FriendlyName="ColorID" type="xs:int" />
+                  <xs:element name="PrimaryColor" msprop:design-time-name="1cbb32f3-9115-4144-a445-98d091a01b9a" msprop:DbColumnName="PrimaryColor" msprop:FriendlyName="PrimaryColor" type="xs:int" />
+                  <xs:element name="SecondaryColor" msprop:design-time-name="1474c59c-0d1b-43c3-822f-e91b09df3854" msprop:DbColumnName="SecondaryColor" msprop:FriendlyName="SecondaryColor" type="xs:int" minOccurs="0" />
+                  <xs:element name="TertiaryColor" msprop:design-time-name="1927a824-9fae-433e-98de-9f99850e3140" msprop:DbColumnName="TertiaryColor" msprop:FriendlyName="TertiaryColor" type="xs:int" minOccurs="0" />
+                  <xs:element name="ColorPurity" msprop:design-time-name="c7aec1be-5fcb-4400-ad6d-32f10ceae415" msprop:DbColumnName="ColorPurity" msprop:FriendlyName="ColorPurity">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="5" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimColorLabels" msprop:design-time-name="0da75d43-3f3a-43e0-9a64-1db48813135b" msprop:DbTableName="DimColorLabels" msprop:FriendlyName="DimColorLabels" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ColorLabelID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="d14497ca-9ff1-4795-accb-e071e1d75755" msprop:DbColumnName="ColorLabelID" msprop:FriendlyName="ColorLabelID" type="xs:int" />
+                  <xs:element name="ColorName" msprop:design-time-name="97ea6747-998c-47e1-9a76-cea551c99f6d" msprop:DbColumnName="ColorName" msprop:FriendlyName="ColorName">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimDewormed" msprop:design-time-name="16c459ab-d9e7-4273-9913-06617a66b527" msprop:DbTableName="DimDewormed" msprop:FriendlyName="DimDewormed" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DewormedID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="d7c357fc-e063-449f-80ee-e57eb1c22a39" msprop:DbColumnName="DewormedID" msprop:FriendlyName="DewormedID" type="xs:int" />
+                  <xs:element name="Dewormed" msprop:design-time-name="5aa86589-2701-4b13-b1ad-6cea6ab8d27e" msprop:DbColumnName="Dewormed" msprop:FriendlyName="Dewormed" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="8" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimFurLength" msprop:design-time-name="486b401c-a517-43cc-b03d-2a7ac172b2ec" msprop:DbTableName="DimFurLength" msprop:FriendlyName="DimFurLength" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="FurLengthID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="f2ef01eb-8078-4c4b-a371-60bfb10efe83" msprop:DbColumnName="FurLengthID" msprop:FriendlyName="FurLengthID" type="xs:int" />
+                  <xs:element name="FurLength" msprop:design-time-name="2c3e634b-11a2-42ba-af05-5e7101b3b49e" msprop:DbColumnName="FurLength" msprop:FriendlyName="FurLength" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="13" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimGender" msprop:design-time-name="4f8ce79f-279b-4c9f-b340-8ce669872a46" msprop:DbTableName="DimGender" msprop:FriendlyName="DimGender" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="GenderID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="a64a9719-fe31-4d66-ae93-c8485a711061" msprop:DbColumnName="GenderID" msprop:FriendlyName="GenderID" type="xs:int" />
+                  <xs:element name="Gender" msprop:design-time-name="6dd89f74-7b3a-4b23-832d-e3c10053ab29" msprop:DbColumnName="Gender" msprop:FriendlyName="Gender">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimHealth" msprop:design-time-name="84055bc2-46b8-4f60-9aa3-0967548c90ca" msprop:DbTableName="DimHealth" msprop:FriendlyName="DimHealth" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="HealthID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="f13e66d6-db71-49e7-a653-6b73de070f85" msprop:DbColumnName="HealthID" msprop:FriendlyName="HealthID" type="xs:int" />
+                  <xs:element name="Health" msprop:design-time-name="2068bf4c-7e40-428e-88b5-a309b4427b5a" msprop:DbColumnName="Health" msprop:FriendlyName="Health" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="14" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimLocation" msprop:design-time-name="ef4140ae-c6a9-4546-a473-39acfe73c02b" msprop:DbTableName="DimLocation" msprop:FriendlyName="DimLocation" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="LocationID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="1962dd7e-c5a6-4240-baed-2b0923c58637" msprop:DbColumnName="LocationID" msprop:FriendlyName="LocationID" type="xs:int" />
+                  <xs:element name="State" msprop:design-time-name="5b10b899-fccd-48fc-863a-bef85118fcc3" msprop:DbColumnName="State" msprop:FriendlyName="State" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimMaturitySize" msprop:design-time-name="a24bfbc6-b5de-4ed6-a206-9f8161edd117" msprop:DbTableName="DimMaturitySize" msprop:FriendlyName="DimMaturitySize" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="MaturitySizeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="3f787edb-4fa1-4a1d-be8a-0d810fecad64" msprop:DbColumnName="MaturitySizeID" msprop:FriendlyName="MaturitySizeID" type="xs:int" />
+                  <xs:element name="MaturitySize" msprop:design-time-name="15a64d52-7ebf-4417-97dd-76451a36bbaa" msprop:DbColumnName="MaturitySize" msprop:FriendlyName="MaturitySize" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="13" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimRescuer" msprop:design-time-name="3886748e-0acd-462f-bca3-c15e47ff7c7b" msprop:DbTableName="DimRescuer" msprop:FriendlyName="DimRescuer" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="RescuerID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="4d7949a6-7979-4021-8f95-b904eec594b1" msprop:DbColumnName="RescuerID" msprop:FriendlyName="RescuerID" type="xs:int" />
+                  <xs:element name="Rescuer" msprop:design-time-name="806096ba-ed80-4c8a-8312-17ce1b0d1799" msprop:DbColumnName="Rescuer" msprop:FriendlyName="Rescuer" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="32" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimState" msprop:design-time-name="a01f39cb-8030-4aa5-ac57-9045ab6ffd6e" msprop:DbTableName="DimState" msprop:FriendlyName="DimState" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="StateID" msprop:design-time-name="15a9eadd-522d-4d06-ba32-501f37657746" msprop:DbColumnName="StateID" msprop:FriendlyName="StateID" type="xs:int" />
+                  <xs:element name="State" msprop:design-time-name="aa645e1f-95f0-4c5e-899c-696d3e245065" msprop:DbColumnName="State" msprop:FriendlyName="State">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimSterilized" msprop:design-time-name="8403f028-dffd-4a19-959d-9fc279b79422" msprop:DbTableName="DimSterilized" msprop:FriendlyName="DimSterilized" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SterilizedID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="647b29e5-6572-4776-908e-31778033a50e" msprop:DbColumnName="SterilizedID" msprop:FriendlyName="SterilizedID" type="xs:int" />
+                  <xs:element name="Sterilized" msprop:design-time-name="722bc960-9cbf-4a4f-a9e2-f51a54a45e31" msprop:DbColumnName="Sterilized" msprop:FriendlyName="Sterilized" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="8" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimType" msprop:design-time-name="68b58643-f885-411a-8bb4-6544a944d52f" msprop:DbTableName="DimType" msprop:FriendlyName="DimType" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TypeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="97b6b4f1-e2b6-41bd-b364-26cccb4edaae" msprop:DbColumnName="TypeID" msprop:FriendlyName="TypeID" type="xs:int" />
+                  <xs:element name="Type" msprop:design-time-name="5ddcd52d-99a1-4988-a07e-33393bb1e2d5" msprop:DbColumnName="Type" msprop:FriendlyName="Type">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimVaccinated" msprop:design-time-name="fcdf14bb-e51d-4cc0-83ca-927281f5d1e2" msprop:DbTableName="DimVaccinated" msprop:FriendlyName="DimVaccinated" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="VaccinatedID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="fe04ded1-86ea-4f5d-9dc5-42fb1db97f95" msprop:DbColumnName="VaccinatedID" msprop:FriendlyName="VaccinatedID" type="xs:int" />
+                  <xs:element name="Vaccinated" msprop:design-time-name="55d0b018-9bfc-4433-8f66-d500304288fc" msprop:DbColumnName="Vaccinated" msprop:FriendlyName="Vaccinated" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="8" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_FactPetAdoptionSpeed" msprop:design-time-name="d06a6f6e-1c16-486e-9f3c-d821424c4ea7" msprop:DbTableName="FactPetAdoptionSpeed" msprop:FriendlyName="FactPetAdoptionSpeed" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PetID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="49fac451-c29d-4cad-9df0-362a99562df5" msprop:DbColumnName="PetID" msprop:FriendlyName="PetID" type="xs:int" />
+                  <xs:element name="PetAltID" msprop:design-time-name="c327e02f-5cfb-4959-839f-f4eaccae99fc" msprop:DbColumnName="PetAltID" msprop:FriendlyName="PetAltID" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="9" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="BreedID" msprop:design-time-name="677fc85d-7a88-46c4-ad6f-1b569c870956" msprop:DbColumnName="BreedID" msprop:FriendlyName="BreedID" type="xs:int" minOccurs="0" />
+                  <xs:element name="ColorID" msprop:design-time-name="c774937e-4325-4270-8197-a4d0e7890478" msprop:DbColumnName="ColorID" msprop:FriendlyName="ColorID" type="xs:int" minOccurs="0" />
+                  <xs:element name="TypeID" msprop:design-time-name="ce8b1b2f-d2f8-4037-af64-b6231497e77b" msprop:DbColumnName="TypeID" msprop:FriendlyName="TypeID" type="xs:int" minOccurs="0" />
+                  <xs:element name="GenderID" msprop:design-time-name="810e510f-b1f3-4377-93b9-a9b740863775" msprop:DbColumnName="GenderID" msprop:FriendlyName="GenderID" type="xs:int" minOccurs="0" />
+                  <xs:element name="AgeID" msprop:design-time-name="c21a2a22-d9ec-4a08-99c5-01b728a3d8fb" msprop:DbColumnName="AgeID" msprop:FriendlyName="AgeID" type="xs:int" minOccurs="0" />
+                  <xs:element name="LocationID" msprop:design-time-name="71f560bc-46ac-4710-9dd9-cd62088b9091" msprop:DbColumnName="LocationID" msprop:FriendlyName="LocationID" type="xs:int" minOccurs="0" />
+                  <xs:element name="MaturitySizeID" msprop:design-time-name="0e83be9e-2483-4530-b82b-90c04d87d2f9" msprop:DbColumnName="MaturitySizeID" msprop:FriendlyName="MaturitySizeID" type="xs:int" minOccurs="0" />
+                  <xs:element name="FurLengthID" msprop:design-time-name="757abfb4-393b-4ec5-bccd-216019b641e2" msprop:DbColumnName="FurLengthID" msprop:FriendlyName="FurLengthID" type="xs:int" minOccurs="0" />
+                  <xs:element name="VaccinatedID" msprop:design-time-name="64ca4f09-399d-400e-b17c-8efd6a3c8b2c" msprop:DbColumnName="VaccinatedID" msprop:FriendlyName="VaccinatedID" type="xs:int" minOccurs="0" />
+                  <xs:element name="DewormedID" msprop:design-time-name="3c833734-e891-419e-8e37-ccb160036b11" msprop:DbColumnName="DewormedID" msprop:FriendlyName="DewormedID" type="xs:int" minOccurs="0" />
+                  <xs:element name="SterilizedID" msprop:design-time-name="6fa24572-f939-4b93-9617-0f1da65cdfe9" msprop:DbColumnName="SterilizedID" msprop:FriendlyName="SterilizedID" type="xs:int" minOccurs="0" />
+                  <xs:element name="HealthID" msprop:design-time-name="921ab27a-5df9-4cf4-9186-31a21f98879a" msprop:DbColumnName="HealthID" msprop:FriendlyName="HealthID" type="xs:int" minOccurs="0" />
+                  <xs:element name="RescuerID" msprop:design-time-name="a92ce7e5-efb8-4fd4-8a71-b9c291d1e910" msprop:DbColumnName="RescuerID" msprop:FriendlyName="RescuerID" type="xs:int" minOccurs="0" />
+                  <xs:element name="VideoAmt" msprop:design-time-name="7bba3d44-0a46-4c68-8d06-54800376e10b" msprop:DbColumnName="VideoAmt" msprop:FriendlyName="VideoAmt" type="xs:int" minOccurs="0" />
+                  <xs:element name="PhotoAmt" msprop:design-time-name="25e5d4ec-a5c2-412d-b8bb-e02758a26754" msprop:DbColumnName="PhotoAmt" msprop:FriendlyName="PhotoAmt" type="xs:int" minOccurs="0" />
+                  <xs:element name="Fee" msprop:design-time-name="fa33b408-c07e-4ec1-9e51-90b8dec01cd6" msprop:DbColumnName="Fee" msprop:FriendlyName="Fee" type="xs:int" minOccurs="0" />
+                  <xs:element name="Quantity" msprop:design-time-name="f0c464c5-3db1-45d4-bb51-e91ba358fbc7" msprop:DbColumnName="Quantity" msprop:FriendlyName="Quantity" type="xs:int" minOccurs="0" />
+                  <xs:element name="AdoptionSpeedID" msprop:design-time-name="cad7a1de-c336-4cb4-af81-f0ead7784d47" msprop:DbColumnName="AdoptionSpeedID" msprop:FriendlyName="AdoptionSpeedID" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimAdoptionSpeed" />
+          <xs:field xpath="AdoptionSpeedID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimAge_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimAge" />
+          <xs:field xpath="AgeID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimBreed_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimBreed" />
+          <xs:field xpath="BreedID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimBreedLabels_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimBreedLabels" />
+          <xs:field xpath="BreedLabelID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimColor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimColor" />
+          <xs:field xpath="ColorID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimColorLabels_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimColorLabels" />
+          <xs:field xpath="ColorLabelID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimDewormed_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimDewormed" />
+          <xs:field xpath="DewormedID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimFurLength_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimFurLength" />
+          <xs:field xpath="FurLengthID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimGender_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimGender" />
+          <xs:field xpath="GenderID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimHealth_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimHealth" />
+          <xs:field xpath="HealthID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimLocation_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimLocation" />
+          <xs:field xpath="LocationID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimMaturitySize_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimMaturitySize" />
+          <xs:field xpath="MaturitySizeID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimRescuer_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimRescuer" />
+          <xs:field xpath="RescuerID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimState_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimState" />
+          <xs:field xpath="StateID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimSterilized_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimSterilized" />
+          <xs:field xpath="SterilizedID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimType" />
+          <xs:field xpath="TypeID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimVaccinated_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimVaccinated" />
+          <xs:field xpath="VaccinatedID" />
+        </xs:unique>
+        <xs:unique name="dbo_FactPetAdoptionSpeed_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="PetID" />
+        </xs:unique>
+        <xs:keyref name="FK_ColorID" refer="dbo_DimColor_Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="ColorID" />
+        </xs:keyref>
+        <xs:keyref name="FK_SterilizedID" refer="dbo_DimSterilized_Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="SterilizedID" />
+        </xs:keyref>
+        <xs:keyref name="FK_VaccinatedID" refer="dbo_DimVaccinated_Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="VaccinatedID" />
+        </xs:keyref>
+        <xs:keyref name="FK_MaturitySizeID" refer="dbo_DimMaturitySize_Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="MaturitySizeID" />
+        </xs:keyref>
+        <xs:keyref name="FK_GenderID" refer="dbo_DimGender_Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="GenderID" />
+        </xs:keyref>
+        <xs:keyref name="FK_TypeID" refer="dbo_DimType_Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="TypeID" />
+        </xs:keyref>
+        <xs:keyref name="FK_AgeID" refer="dbo_DimAge_Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="AgeID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FurLengthID" refer="dbo_DimFurLength_Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="FurLengthID" />
+        </xs:keyref>
+        <xs:keyref name="FK_AdoptionSpeedID" refer="Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="AdoptionSpeedID" />
+        </xs:keyref>
+        <xs:keyref name="FK_RescuerID" refer="dbo_DimRescuer_Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="RescuerID" />
+        </xs:keyref>
+        <xs:keyref name="FK_DewormedID" refer="dbo_DimDewormed_Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="DewormedID" />
+        </xs:keyref>
+        <xs:keyref name="FK_BreedID" refer="dbo_DimBreed_Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="BreedID" />
+        </xs:keyref>
+        <xs:keyref name="FK_LocationID" refer="dbo_DimLocation_Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="LocationID" />
+        </xs:keyref>
+        <xs:keyref name="FK_HealthID" refer="dbo_DimHealth_Constraint1">
+          <xs:selector xpath=".//dbo_FactPetAdoptionSpeed" />
+          <xs:field xpath="HealthID" />
+        </xs:keyref>
+        <xs:keyref name="FK_State" refer="dbo_DimState_Constraint1">
+          <xs:selector xpath=".//dbo_DimLocation" />
+          <xs:field xpath="State" />
+        </xs:keyref>
+        <xs:keyref name="FK_TertiaryColor" refer="dbo_DimColorLabels_Constraint1">
+          <xs:selector xpath=".//dbo_DimColor" />
+          <xs:field xpath="TertiaryColor" />
+        </xs:keyref>
+        <xs:keyref name="FK_SecondaryColor" refer="dbo_DimColorLabels_Constraint1">
+          <xs:selector xpath=".//dbo_DimColor" />
+          <xs:field xpath="SecondaryColor" />
+        </xs:keyref>
+        <xs:keyref name="FK_PrimaryColor" refer="dbo_DimColorLabels_Constraint1">
+          <xs:selector xpath=".//dbo_DimColor" />
+          <xs:field xpath="PrimaryColor" />
+        </xs:keyref>
+        <xs:keyref name="FK_SecondaryBreed" refer="dbo_DimBreedLabels_Constraint1">
+          <xs:selector xpath=".//dbo_DimBreed" />
+          <xs:field xpath="SecondaryBreed" />
+        </xs:keyref>
+        <xs:keyref name="FK_PrimaryBreed" refer="dbo_DimBreedLabels_Constraint1">
+          <xs:selector xpath=".//dbo_DimBreed" />
+          <xs:field xpath="PrimaryBreed" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Pet_x0020_Adoption xmlns="" />
+  </Schema>
+</DataSourceView>
