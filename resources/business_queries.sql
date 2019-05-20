@@ -1,12 +1,18 @@
 -- Business Query 1
+-- Non Drilled Query
+SELECT ColorPurity, SUM(Quantity) Total
+FROM FactPetAdoptionSpeed f, DimColor c
+WHERE f.ColorID = c.ColorID
+GROUP BY c.ColorPurity
+ORDER BY Total DESC;
+
+-- Drilled Down Query
 SELECT ColorName, SUM(Quantity) Total
-FROM FactPetAdoptionSpeed f, DimColor c, DimAdoptionSpeed a, DimColorLabels l
+FROM FactPetAdoptionSpeed f, DimColor c, DimColorLabels l
 WHERE f.ColorID = c.ColorID
 AND c.PrimaryColor = l.ColorLabelID
-AND c.ColorPurity = 'Pure'
-AND f.AdoptionSpeedID = a.AdoptionSpeedID
-AND a.ListingDuration <= 30
-GROUP BY ColorName;
+GROUP BY ColorName
+ORDER BY Total DESC;
 
 -- Business Query 2
 SELECT Type, SUM(Quantity) Total
@@ -31,14 +37,6 @@ AND a.AdoptionSpeed = 'Instant'
 AND t.Type = 'Cat';
 
 -- Business Query 4
-SELECT BreedPurity, SUM(Quantity) Total
-FROM FactPetAdoptionSpeed f, DimBreed b, DimAdoptionSpeed a
-WHERE f.BreedID = b.BreedID
-AND a.AdoptionSpeedID = f.AdoptionSpeedID
-AND a.AdoptionSpeed = 'Instant'
-AND fee = 0 GROUP BY BreedPurity;
-
--- Business Query 5
 SELECT s.State State, SUM(Quantity) Total
 FROM FactPetAdoptionSpeed f, DimLocation l, DimState s
 WHERE f.LocationID = l.LocationID
@@ -46,3 +44,12 @@ AND l.State = s.StateID
 GROUP BY s.State
 ORDER BY Total DESC;
 
+-- Business Query 5
+SELECT BreedPurity, SUM(Quantity) Total
+FROM FactPetAdoptionSpeed f, DimHealth h, DimAdoptionSpeed a, DimBreed b
+WHERE f.HealthID = h.HealthID
+AND f.AdoptionSpeedID = a.AdoptionSpeedID
+AND f.BreedID = b.BreedID
+AND h.Health = 'Healthy'
+AND a.AdoptionSpeed = 'Slow'
+GROUP BY b.BreedPurity;
