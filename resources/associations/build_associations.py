@@ -23,6 +23,51 @@ def get_type(row):
         return "Cat"
     return "Dog"
 
+def get_age(row):
+    age = row[2]
+    if int(age) <= 2:
+        return "0to2Months"
+    elif int(age) > 2 and int(age) < 6:
+        return "2to5Months"
+    else:
+        return "5orMoreMonths"
+
+def get_fee(row):
+    fee = row[16]
+    if fee == "0":
+        return "Free"
+    else:
+        return "NotFree"
+
+def get_quantity(row):
+    quantity = row[15]
+    if quantity == "1":
+        return "Single"
+    else:
+        return "Multiple"
+
+def get_video_amt(row):
+    video_amt = row[19]
+    if video_amt == "0":
+        return "None"
+    else:
+        return "VideosUploaded"
+
+def get_photo_amt(row):
+    photo_amt = int(float(row[22]))
+    if photo_amt == 0 or photo_amt == 1:
+        return "OneOrLess"
+    elif photo_amt == 2:
+        return "Two"
+    elif photo_amt == 3:
+        return "Three"
+    elif photo_amt == 4:
+        return "Four"
+    elif photo_amt == 5:
+        return "Five"
+    else:
+        return "5orMore"
+
 def get_gender(row):
     gender = row[5]
     if gender == "1":
@@ -136,7 +181,7 @@ def main():
     next(read_train) # Skip the header
     for row in read_train:
         type = get_type(row)
-        age = row[2]
+        age = get_age(row)
         breed_purity = get_breed_purity(row)
         gender = get_gender(row)
         color_purity = get_color_purity(row)
@@ -146,11 +191,11 @@ def main():
         dewormed = get_dewormed(row)
         sterilized = get_sterilized(row)
         health = get_health(row)
-        quantity = row[15]
-        fee = row[16]
+        quantity = get_quantity(row)
+        fee = get_fee(row)
         state = get_state_name(row)
-        video_amt = row[19]
-        photo_amt = int(float(row[22])) # PhotoAmt is of type float in train.csv
+        video_amt = get_video_amt(row)
+        photo_amt = get_photo_amt(row) # PhotoAmt is of type float in train.csv
         adoption_speed = get_adoption_speed(row)
 
         write_output.writerow([type, age, breed_purity, gender, color_purity, maturity_size, fur_length, vaccinated, dewormed, sterilized, health,
