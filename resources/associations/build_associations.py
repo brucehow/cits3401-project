@@ -78,6 +78,28 @@ def get_sterilized(row):
     else:
         return "Not Sure"
 
+def get_fur_length(row):
+    fur_length = row[10]
+    if fur_length == "1":
+        return "Short"
+    elif fur_length == "2":
+        return "Medium"
+    elif fur_length == "3":
+        return "Long"
+    else:
+        return "Not Specified"
+
+def get_health(row):
+    health = row[14]
+    if health == "1":
+        return "Healthy"
+    elif health == "2":
+        return "Minor Injury"
+    elif health == "3":
+        return "Serious Injury"
+    else:
+        return "Not Specified"
+
 def get_state_name(row):
     postcode = row[17]
     return states[postcode]
@@ -119,11 +141,11 @@ def main():
         gender = get_gender(row)
         color_purity = get_color_purity(row)
         maturity_size = get_maturity_size(row)
-        fur_length = row[10]
+        fur_length = get_fur_length(row)
         vaccinated = get_vaccinated(row)
         dewormed = get_dewormed(row)
         sterilized = get_sterilized(row)
-        health = row[14]
+        health = get_health(row)
         quantity = row[15]
         fee = row[16]
         state = get_state_name(row)
