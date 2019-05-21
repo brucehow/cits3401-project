@@ -12,9 +12,17 @@ states = {}
 
 def get_color_purity(row):
     color2 = row[7]
-    if color2 == 0:
+    color3 = row[8]
+    if color2 == 0 and color3 == 0:
         return "Pure"
     return "Mixed"
+
+def get_type(row):
+    type = row[0]
+    if type == "2":
+        return "Cat"
+    return "Dog"
+
 
 def get_breed_purity(row):
     breed2 = row[4]
@@ -57,7 +65,7 @@ def main():
     print("Extracting data from train.csv")
     next(read_train) # Skip the header
     for row in read_train:
-        type = row[0]
+        type = get_type(row)
         age = row[2]
         breed_purity = get_breed_purity(row)
         gender = row[5]
