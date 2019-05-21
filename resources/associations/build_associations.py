@@ -32,12 +32,51 @@ def get_gender(row):
     else:
         return "Mixed"
 
-
 def get_breed_purity(row):
     breed2 = row[4]
     if breed2 == "0":
         return "Pure"
     return "Mixed"
+
+def get_maturity_size(row):
+    maturity_size = row[9]
+    if maturity_size == "1":
+        return "Small"
+    elif maturity_size == "2":
+        return "Medium"
+    elif maturity_size == "3":
+        return "Large"
+    elif maturity_size == "4":
+        return "Extra Large"
+    else:
+        return "Not Specified"
+
+def get_vaccinated(row):
+    vaccinated = row[11]
+    if vaccinated == "1":
+        return "Yes"
+    elif vaccinated == "2":
+        return "No"
+    else:
+        return "Not Sure"
+
+def get_dewormed(row):
+    dewormed = row[12]
+    if dewormed == "1":
+        return "Yes"
+    elif dewormed == "2":
+        return "No"
+    else:
+        return "Not Sure"
+
+def get_sterilized(row):
+    sterilized = row[13]
+    if sterilized == "1":
+        return "Yes"
+    elif sterilized == "2":
+        return "No"
+    else:
+        return "Not Sure"
 
 def get_state_name(row):
     postcode = row[17]
@@ -79,11 +118,11 @@ def main():
         breed_purity = get_breed_purity(row)
         gender = get_gender(row)
         color_purity = get_color_purity(row)
-        maturity_size = row[9]
+        maturity_size = get_maturity_size(row)
         fur_length = row[10]
-        vaccinated = row[11]
-        dewormed = row[12]
-        sterilized = row[13]
+        vaccinated = get_vaccinated(row)
+        dewormed = get_dewormed(row)
+        sterilized = get_sterilized(row)
         health = row[14]
         quantity = row[15]
         fee = row[16]
