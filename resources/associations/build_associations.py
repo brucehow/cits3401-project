@@ -13,20 +13,29 @@ states = {}
 def get_color_purity(row):
     color2 = row[7]
     color3 = row[8]
-    if color2 == 0 and color3 == 0:
+    if color2 == "0" and color3 == "0":
         return "Pure"
     return "Mixed"
 
 def get_type(row):
-    type = row[0]
-    if type == "2":
+    pet_type = row[0]
+    if pet_type == "2":
         return "Cat"
     return "Dog"
+
+def get_gender(row):
+    gender = row[5]
+    if gender == "1":
+        return "Male"
+    elif gender == "2":
+        return "Female"
+    else:
+        return "Mixed"
 
 
 def get_breed_purity(row):
     breed2 = row[4]
-    if breed2 == 0:
+    if breed2 == "0":
         return "Pure"
     return "Mixed"
 
@@ -68,7 +77,7 @@ def main():
         type = get_type(row)
         age = row[2]
         breed_purity = get_breed_purity(row)
-        gender = row[5]
+        gender = get_gender(row)
         color_purity = get_color_purity(row)
         maturity_size = row[9]
         fur_length = row[10]
