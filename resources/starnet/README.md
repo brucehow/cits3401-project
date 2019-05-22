@@ -15,8 +15,8 @@ The StarNet is created using our concept heirarchies defined in our plan. Each h
 
 These business queries can be answered using the StarNet diagram which can be found in this `starnet` dir.
 
-1. [How many Pure and Mixed Coloured pets are there?](./query-footprint/q1_query_footprint.png)
-2. [How many vaccinated pets are also sterilized?](./query-footprint/q2_query_footprint.png)
-3. [How many female cats with long hair were adopted instantly?](./query-footprint/q3_query_footprint.png)
-4. [How many pets from each state were adopted?](./query-footprint/q4_query_footprint.png)
-5. [How many healthy Pure and Mixed Breed pets have been adopted slowly?](./query-footprint/q5_query_footprint.png)
+1. [How many Pure and Mixed Coloured pets are there?](./query_footprint/q1_query_footprint.png)
+2. [How many vaccinated pets are also sterilized?](./query_footprint/q2_query_footprint.png)
+3. [How many female cats with long hair were adopted instantly?](./query_footprint/q3_query_footprint.png)
+4. [How many pets from each state were adopted?](./query_footprint/q4_query_footprint.png)
+5. [How many healthy Pure and Mixed Breed pets have been adopted slowly?](./query_footprint/q5_query_footprint.png)
