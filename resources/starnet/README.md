@@ -15,8 +15,8 @@ The StarNet is created using our concept heirarchies defined in our plan. Each h
 
 These business queries can be answered using the StarNet diagram which can be found in this `starnet` dir.
 
-1. [What pure breed has the fastest adoption speed?](./query-footprint/q1-query-footprint.png)
-2. [What pet color and maturity size combination have the slowest adoption speed?](./query-footprint/q2-query-footprint.png)
-3. [In Kuala Lumpur, which male dog mix breed has the fastest adoption speed?](./query-footprint/q3-query-footprint.png)
-4. [How do pet adoption speeds change if the pet has been vaccinated, dewormed and sterillized?](./query-footprint/q4-query-footprint.png)
-5. [Do pets having a mixed color and breed have a faster adoption speed?](./query-footprint/q5-query-footprint.png)
+1. [How many Pure and Mixed Coloured pets are there?](./query-footprint/q1-query-footprint.png)
+2. [How many vaccinated pets are also sterilized?](./query-footprint/q2-query-footprint.png)
+3. [How many female cats with long hair were adopted instantly?](./query-footprint/q3-query-footprint.png)
+4. [How many pets from each state were adopted?](./query-footprint/q4-query-footprint.png)
+5. [How many healthy Pure and Mixed Breed pets have been adopted slowly?](./query-footprint/q5-query-footprint.png)
