@@ -1,4 +1,4 @@
-# Concept Heirarchies
+# Concept Hierarchies
 
 **Section 1:**
 
