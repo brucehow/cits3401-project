@@ -38,9 +38,11 @@ AND t.Type = 'Cat';
 
 -- Business Query 4
 SELECT s.State State, SUM(Quantity) Total
-FROM FactPetAdoptionSpeed f, DimLocation l, DimState s
+FROM FactPetAdoptionSpeed f, DimLocation l, DimState s, DimAdoptionSpeed a
 WHERE f.LocationID = l.LocationID
+AND f.AdoptionSpeedID = a.AdoptionSpeedID
 AND l.State = s.StateID
+AND a.AdoptionSpeedID != 4
 GROUP BY s.State
 ORDER BY Total DESC;
 
