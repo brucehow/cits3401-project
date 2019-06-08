@@ -1,4 +1,4 @@
-# CITS3401 Project - Pet Adoption &middot; [![Python 3.7.2](https://img.shields.io/badge/python-3.7.2-blue.svg)](https://www.python.org/downloads/release/python-372/) [![MSSQL](https://img.shields.io/badge/SQL%20Server%202017-14.0-orange.svg)](https://www.microsoft.com/en-au/sql-server/sql-server-downloads)
+# CITS3401 Project &middot; [![Python 3.7.2](https://img.shields.io/badge/python-3.7.2-blue.svg)](https://www.python.org/downloads/release/python-372/) [![MSSQL](https://img.shields.io/badge/SQL%20Server%202017-14.0-orange.svg)](https://www.microsoft.com/en-au/sql-server/sql-server-downloads)
 
 ## Authors
 - Bruce How ([22242664](https://github.com/brucehow/))
