@@ -13,12 +13,12 @@ Kaggle's [PetFinder Adoption Prediction](https://www.kaggle.com/c/petfinder-adop
 
 ```
 $ cd submission/etl
-$ python etl.py
+$ python3 etl.py
 ```
 
 ```
 $ cd submission/associations
-$ python build_associations.py
+$ python3 build_associations.py
 ```
 
 ## Dependencies
